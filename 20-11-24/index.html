@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo on Form Tags</title>
+</head>
+
+<body>
+    <h1>Update Information</h1>
+    <p>Use the form below to edit your information</p>
+
+    <form action="./response.html" method="get">
+        <label for="firstname"><i>First name : </i></label>
+        <input type="text" name="firstname" id="firstname" value="Bruce">
+        <br>
+        <label for="lastname"><i>Last name : </i></label>
+        <input type="text" name="lastname" id="lastname" value="Phillips">
+        <br>
+        <label for="favsport"><i>Favorite Sport : </i></label>
+        <select name="Sport" id="favsport">
+            <option value="BasketBall">BasketBall</option>
+            <option value="Crikcet">Crikcet</option>
+            <option value="Football">Football</option>
+            <option value="Badminton">Badminton</option>
+            <option value="Kabbadi">Kabbadi</option>
+        </select>
+        <br>
+        <label for="gender"><i>Gender : </i></label>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="notsure" value="Not Sure">
+        <label for="notsure">not sure</label>
+        <br>
+        <label for="state"><i>State Resident : </i></label>
+        <select name="resident" id="state">
+            <option value="Kansas">Kansas</option>
+            <option value="Karunakar">Karunakar</option>
+            <option value="jntuh">JNTUH</option>
+            <option value="kukatpally">kukatpally</option>
+        </select>
+        <br>
+        <input type="checkbox" name="agev" id="agev">
+        <label for="agev">21 or older</label>
+        <br>
+        <label for="car"><i>Car Models owned : </i></label>
+        <input type="checkbox" name="ford" id="ford">
+        <label for="ford">Ford</label>
+
+        <input type="checkbox" name="Chrysler" id="Chrysler">
+        <label for="Chrysler">Chrysler</label>
+
+        <input type="checkbox" name="Toyota" id="Toyota">
+        <label for="Toyota">Toyota</label>
+
+        <input type="checkbox" name="Nissan" id="Nissan">
+        <label for="Nissan">Nissan</label>
+        <br>
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+
+</html>
