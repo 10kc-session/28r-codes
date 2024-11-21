@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Forms -->
+    <form action="./response.html" method="get" enctype="multipart/form-data">
+        <!-- name , type , id , value , placeholder , autocomplete  -->
+        <fieldset>
+            <legend>Register</legend>
+            <label for="username">username</label>
+            <input type="text" id="username" name="un" autocomplete="off" disabled autofocus value="Varun">
+            <br>
+            Password : <input type="text" value="arun" autofocus maxlength="10">
+            <br>
+            <label for="file">File</label>
+            <input type="file" id="file" name="file" accept=".docx,.pdf" multiple>
+            <textarea name="address" id="addr"></textarea>
+            <select name="" id="">
+                <option value="--select--" disabled selected>--Select---</option>
+                <option value="x">X</option>
+                <option value="x">X</option>
+                <option value="x">X</option>
+                <option value="x">X</option>
+            </select>
+            <input type="checkbox" name="" id="" checked>
+            <input type="submit" value="Register">
+        </fieldset>
+    </form>
+</body>
+
+</html>
