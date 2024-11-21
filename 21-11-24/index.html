@@ -8,29 +8,16 @@
 </head>
 
 <body>
-    <!-- Forms -->
-    <form action="./response.html" method="get" enctype="multipart/form-data">
-        <!-- name , type , id , value , placeholder , autocomplete  -->
-        <fieldset>
-            <legend>Register</legend>
-            <label for="username">username</label>
-            <input type="text" id="username" name="un" autocomplete="off" disabled autofocus value="Varun">
-            <br>
-            Password : <input type="text" value="arun" autofocus maxlength="10">
-            <br>
-            <label for="file">File</label>
-            <input type="file" id="file" name="file" accept=".docx,.pdf" multiple>
-            <textarea name="address" id="addr"></textarea>
-            <select name="" id="">
-                <option value="--select--" disabled selected>--Select---</option>
-                <option value="x">X</option>
-                <option value="x">X</option>
-                <option value="x">X</option>
-                <option value="x">X</option>
-            </select>
-            <input type="checkbox" name="" id="" checked>
-            <input type="submit" value="Register">
-        </fieldset>
+    <!-- 
+        28rbatch@gmail.com
+        xyz.official@gmail.
+        com , gov , in , co , org
+        gmail , yahoo , reddif , outlook
+    -->
+    <form action="./response.html" method="get" autocomplete="off">
+        <!-- <input type="text" pattern="[\da-z.]+@[a-z]+\.[a-z]+" required title="please use @ and gmail and com"> <br> -->
+        <input type="text" required pattern=".{8,16}" title="min 3 and max 10"> <br>
+        <input type="submit" value="Save Changes">
     </form>
 </body>
 
