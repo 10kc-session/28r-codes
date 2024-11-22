@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="https://media.tenor.com/-Y2YOay3_JoAAAAM/its-friday-dancing.gif">
+</head>
+
+<body>
+    <!-- 
+        password -> one small , one cap , one special , one digit , 8 - 16
+        (?=.*[a-z])
+        (?=.*[A-Z])
+        (?=.*[\d])
+        (?=.*[%#$*@]) -> positive look ahead / positive assertions
+        https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+    -->
+    <form action="../21-11-24/response.html" method="get" autocomplete="off">
+        <input type="text" required pattern="[a-z\d]+@(gmail|yahoo|outlook)+\.(com|in|co)"> <br>
+        <input type="text" required pattern="\d{2}-\d{2}-\d{4}" title="Date format should be dd-mm-yyyy">
+        <br>
+        <input type="text" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[$%&#@]).{8,16}"
+            title="password must contain small , cap , special , digit and length min 8 , max 16">
+        <br>
+        <input type="color"> <br>
+        <input type="range"> <br>
+        <input type="number"> <br>
+        <input type="button" value="button">
+
+        <label for="car">Cars</label> <br>
+        <input id="car" name="cars" list="cars">
+        <datalist id="cars">
+            <option value="Volkswagen">
+            <option value="Audi">
+            <option value="BMW">
+            <option value="Volvo">
+        </datalist>
+        <br>
+        <select name="bikes" id="bikes">
+            <option value="--select---" disabled selected>--select---</option>
+            <optgroup label="150CC Bikes">
+                <option value="pulsar">Pulsar</option>
+                <option value="fz">FZ</option>
+                <option value="Apache">Apache</option>
+            </optgroup>
+            <optgroup label="300CC">
+                <option value="RE">RE</option>
+                <option value="Jawa">Jawa 42</option>
+                <option value="BMW">BMW</option>
+                <option value="Apache 300 RR">Apahce</option>
+                <option value="ducati">Ducati</option>
+            </optgroup>
+        </select> <br>
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+
+</html>
