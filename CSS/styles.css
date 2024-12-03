@@ -1,37 +1,33 @@
-.a {
-    background-color: lightblue;
-}
-
-.b {
-    background-color: lightcoral;
-}
-
-.c {
-    background-color: lightgreen;
-}
-
-.d {
-    background-color: lightpink;
-}
-
-.a,
-.b,
-.c,
-.d {
-    color: white;
-    padding: 16px;
-    margin: 16px;
-    border-width: 4px;
+.item-1,
+.item-2,
+.item-3 {
+    width: 400px;
+    /* height: 400px; */
+    border-width: 2px;
     border-style: solid;
     border-color: black;
-
-    /* border: width style color; */
-    /* border: 4px solid red; */
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.a,
-.b,
-.c {
-    width: 400px;
-    display: inline-block;
+img {
+    width: 100%;
+    height: 200px;
+}
+
+h2 {
+    margin: 4px;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    text-align: justify;
+}
+
+body {
+    text-align: center;
 }
