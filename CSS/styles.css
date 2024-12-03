@@ -1,0 +1,16 @@
+.a {
+    background-color: lightcoral;
+    margin: 10px;
+}
+
+.a,
+.b {
+    width: 400px;
+    color: white;
+    padding: 20px;
+    display: inline-block;
+}
+
+.b {
+    background-color: lightblue;
+}
