@@ -1,16 +1,37 @@
 .a {
+    background-color: lightblue;
+}
+
+.b {
     background-color: lightcoral;
-    margin: 10px;
+}
+
+.c {
+    background-color: lightgreen;
+}
+
+.d {
+    background-color: lightpink;
 }
 
 .a,
-.b {
-    width: 400px;
+.b,
+.c,
+.d {
     color: white;
-    padding: 20px;
-    display: inline-block;
+    padding: 16px;
+    margin: 16px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+
+    /* border: width style color; */
+    /* border: 4px solid red; */
 }
 
-.b {
-    background-color: lightblue;
+.a,
+.b,
+.c {
+    width: 400px;
+    display: inline-block;
 }
