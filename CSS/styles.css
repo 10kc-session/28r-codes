@@ -1,15 +1,41 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
-.container {
-    width: 300px;
-    height: 300px;
-    background-color: cyan;
-    font-size: 24px;
-    text-align: center;
-    padding: 10px 0px;
-    border: 5px solid;
+/* .container>p {
+    background-color: yellow;
 }
+.container>span>p {
+    background-color: lightblue;
+} */
+
+/* .container>p {
+    background-color: yellow;
+} */
+
+/* .container+p {
+    background-color: aqua;
+} */
+
+/* .container ~ p{
+    background-color: aqua;
+} */
+
+/* .x~p {
+    background-color: aqua;
+} */
+/* .container>span+div .x>p {
+    background-color: yellow;
+} */
+
+/* .container>p~span , 
+.container>p~div {
+    background-color: red;
+} */
+
+/* Answer 1 */
+
+/* Answer 2 */
+
