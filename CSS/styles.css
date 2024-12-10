@@ -1,41 +1,17 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-/* .container>p {
-    background-color: yellow;
+/* #0d6efd */
+button {
+    padding: 8px;
+    font-size: 18px;
+    background-color: #fff;
+    border: none;
+    outline: 1px solid #0d6efd;
+    color: #0d6efd;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
-.container>span>p {
-    background-color: lightblue;
-} */
 
-/* .container>p {
-    background-color: yellow;
-} */
-
-/* .container+p {
-    background-color: aqua;
-} */
-
-/* .container ~ p{
-    background-color: aqua;
-} */
-
-/* .x~p {
-    background-color: aqua;
-} */
-/* .container>span+div .x>p {
-    background-color: yellow;
-} */
-
-/* .container>p~span , 
-.container>p~div {
-    background-color: red;
-} */
-
-/* Answer 1 */
-
-/* Answer 2 */
-
+button:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
