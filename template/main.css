@@ -1,0 +1,91 @@
+.container {
+    background-image: url('https://www.w3schools.com/w3images/coffeehouse.jpg');
+    min-height: 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.text {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 6px;
+    width: fit-content;
+}
+
+.sub-container {
+    font-size: 90px;
+    color: var(--text-color);
+    width: fit-content;
+    text-align: center;
+    line-height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sub-container-2 {
+    color: var(--text-color);
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+}
+
+.span-container {
+    text-align: center;
+    padding: 5rem;
+}
+
+.span-container>span {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 4px;
+    display: inline-block;
+    letter-spacing: 6px;
+    font-size: 1.2rem;
+}
+
+.main-sub-container {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-sub-container>p {
+    width: 800px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.main-sub-container-2 {
+    background-color: #eee;
+    border-left: 6px solid #ccc;
+    padding: 16px;
+    width: 800px;
+}
+
+.main-sub-container-2> :nth-child(1) {
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+.main-image-container {
+    width: 800px;
+}
+
+.main-image-container>img {
+    width: 100%;
+    display: block;
+}
+
+.main-image-container>p {
+    margin: 16px 4px;
+}

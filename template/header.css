@@ -1,0 +1,30 @@
+.header {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 999;
+}
+
+.item>a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.item {
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.item:hover {
+    background-color: #eee;
+}
+
+.item:hover>a {
+    color: #000;
+}
