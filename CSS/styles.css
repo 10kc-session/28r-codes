@@ -9,10 +9,10 @@
 }
 
 .image-container {
-    display: none;
-    /* height: 0px; */
-    /* overflow: hidden; */
-    /* transition: 1s ease; */
+    width: 0%;
+    height: 300px;
+    background-color: lightblue;
+    transition: 0.4s ease;
 }
 
 .image-container>img {
@@ -21,6 +21,5 @@
 }
 
 .text-container:hover+.image-container {
-    display: block;
-    /* height: 700px; */
+    width: 100%;
 }
