@@ -1,69 +1,31 @@
-#container>a:link {
-    text-decoration: none;
-    color: pink;
+.bi {
+    font-size: 1.5rem;
 }
 
-#container>a:visited {
-    color: red;
-}
-
-#container>a:hover {
-    color: violet;
-}
-
-#container>a:active {
-    color: lightgreen;
-}
-
-#container-2>input {
+.item {
     padding: 10px;
-    font-size: 2rem;
-    /* text-align: center; */
+    font-size: 1.5rem;
+    border: 1px solid;
 }
 
-#container-2>input:focus {
-    outline: 2px solid #ccc;
-    border: none;
+.container {
+    display: flex;
     background-color: #eee;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px;
+    position: absolute;
+    left: 60px;
+    top: -90%;
+    transition: 0.8s ease;
 }
 
-/* :: */
-#container-2>input::placeholder {
-    text-align: center;
-    color: red;
+#checkbox:checked+.container {
+    /* display: flex; */
+    /* left: 1%; */
+    top: 0%;
 }
 
-#container-2>input:disabled {
-    color: pink;
-    text-align: center;
+#checkbox {
+    display: none;
 }
-
-#container-2>input:last-child:enabled {
-    border: 2px solid red;
-}
-
-.con>input:checked {
-    outline: 2px solid red;
-}
-
-/* .parent>p:first-child {
-    color: green;
-}
-
-.parent>p:last-child {
-    color: yellow;
-} */
-
-/* .parent>p:nth-child(odd) {
-    color: green;
-}
-
-.parent>p:nth-child(even) {
-    color: red;
-}
- */
-
-/* .parent>p:nth-last-child(odd) {
-    color: red;
-} */
-
