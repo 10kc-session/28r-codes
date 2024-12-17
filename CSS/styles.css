@@ -1,31 +1,51 @@
-.bi {
-    font-size: 1.5rem;
+:root {
+    --primary-color: #F9A1AF;
+    --secondary-color: #FFFFFE;
+    --accent-color: #9D3698;
 }
 
-.item {
-    padding: 10px;
-    font-size: 1.5rem;
-    border: 1px solid;
+p {
+    font-size: 2rem;
+    text-align: justify;
 }
 
-.container {
-    display: flex;
-    background-color: #eee;
-    flex-direction: column;
-    width: fit-content;
-    padding: 10px;
-    position: absolute;
-    left: 60px;
-    top: -90%;
-    transition: 0.8s ease;
+p::first-line {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-#checkbox:checked+.container {
-    /* display: flex; */
-    /* left: 1%; */
-    top: 0%;
+p::first-letter {
+    font-size: 120px;
+    color: var(--accent-color);
 }
 
-#checkbox {
-    display: none;
+p::selection {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+ul {
+    margin-bottom: 1000px;
+}
+
+li {
+    font-size: 30px;
+    /* color: red; */
+    /* list-style-type: none; */
+}
+
+li::marker {
+    color: var(--accent-color);
+}
+
+span {
+    font-size: 3rem;
+}
+
+span::before {
+    content: '→';
+}
+
+span::after {
+    content: '←';
 }
