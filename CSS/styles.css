@@ -1,26 +1,69 @@
-.text-container {
+#container>a:link {
+    text-decoration: none;
+    color: pink;
+}
+
+#container>a:visited {
+    color: red;
+}
+
+#container>a:hover {
+    color: violet;
+}
+
+#container>a:active {
+    color: lightgreen;
+}
+
+#container-2>input {
     padding: 10px;
     font-size: 2rem;
-    border: 2px solid;
+    /* text-align: center; */
+}
+
+#container-2>input:focus {
+    outline: 2px solid #ccc;
+    border: none;
+    background-color: #eee;
+}
+
+/* :: */
+#container-2>input::placeholder {
     text-align: center;
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
+    color: red;
 }
 
-.container {
-    width: 400px;
-    height: 400px;
-    background-color: lightblue;
-    position: absolute;
-    right: -400px;
-    transition: 0.4s ease;
+#container-2>input:disabled {
+    color: pink;
+    text-align: center;
 }
 
-body {
-    overflow: hidden;
+#container-2>input:last-child:enabled {
+    border: 2px solid red;
 }
 
-.text-container:hover+.container {
-    right: 10px;
+.con>input:checked {
+    outline: 2px solid red;
 }
+
+/* .parent>p:first-child {
+    color: green;
+}
+
+.parent>p:last-child {
+    color: yellow;
+} */
+
+/* .parent>p:nth-child(odd) {
+    color: green;
+}
+
+.parent>p:nth-child(even) {
+    color: red;
+}
+ */
+
+/* .parent>p:nth-last-child(odd) {
+    color: red;
+} */
+
