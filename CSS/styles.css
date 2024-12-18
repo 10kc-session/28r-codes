@@ -1,51 +1,98 @@
-:root {
-    --primary-color: #F9A1AF;
-    --secondary-color: #FFFFFE;
-    --accent-color: #9D3698;
+/* .container {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    margin: 0 auto;
+} */
+
+/* max-width : 600px -> width <= 600px */
+/* min-width : 600px -> width >= 600px */
+
+/* @media screen and (max-width : 600px) {
+    .container {
+        background-color: yellow;
+    }
+} */
+/* 
+@media screen and (width <=600px) {
+    .container {
+        background-color: lightblue;
+    }
+} */
+/* 
+@media screen and (width >=400px) and (width <=600px) {
+    .container {
+        height: 500px;
+    }
 }
 
-p {
-    font-size: 2rem;
-    text-align: justify;
+
+@media screen and (min-width : 800px) {
+    .container {
+        width: 100%;
+        background-color: lightgreen;
+
+    }
+} 
+*/
+
+/* .container {
+    background-color: #203040;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+} */
+/* 
+.item {
+    padding: 10px;
+    font-size: 1.5rem;
+} */
+
+/* @media screen and (width <=610px) {
+    .item-6 {
+        display: none;
+    }
 }
 
-p::first-line {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+@media screen and (width <=510px) {
+    .item-5 {
+        display: none;
+    }
+} */
+
+/* @media screen and (width <=610px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+} */
+
+.container {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 1rem;
+    align-items: center;
 }
 
-p::first-letter {
-    font-size: 120px;
-    color: var(--accent-color);
+.subcontainer {
+    display: flex;
+    gap: 20px;
 }
 
-p::selection {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+.bi {
+    display: none;
 }
 
-ul {
-    margin-bottom: 1000px;
-}
+@media screen and (max-width : 512px) {
+    .subcontainer {
+        display: none;
+    }
 
-li {
-    font-size: 30px;
-    /* color: red; */
-    /* list-style-type: none; */
-}
-
-li::marker {
-    color: var(--accent-color);
-}
-
-span {
-    font-size: 3rem;
-}
-
-span::before {
-    content: '→';
-}
-
-span::after {
-    content: '←';
+    .bi {
+        display: block;
+    }
 }
