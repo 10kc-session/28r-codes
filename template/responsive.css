@@ -3,6 +3,10 @@
         padding: 12px;
     }
 
+    .text {
+        background-color: transparent;
+    }
+
     .sub-container {
         font-size: 50px;
         line-height: 70px;
@@ -29,5 +33,30 @@
 
     .footer {
         padding: 2rem;
+    }
+}
+
+@media screen and (min-width : 601px) and (max-width : 1024px) {
+    .sub-container {
+        font-size: 70px;
+        line-height: 90px;
+    }
+
+    .span-container {
+        padding: 3.5rem;
+    }
+
+    .container {
+        min-height: 65%;
+    }
+
+    .main-sub-container>p,
+    .main-sub-container-2,
+    .main-image-container {
+        width: 90%;
+    }
+
+    .footer {
+        padding: 3rem;
     }
 }
