@@ -1,0 +1,33 @@
+@media screen and (max-width : 600px) {
+    .header {
+        padding: 12px;
+    }
+
+    .sub-container {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    .container {
+        min-height: 60%;
+    }
+
+    .sub-container-2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .span-container {
+        padding: 2.5rem;
+    }
+
+    .main-sub-container>p,
+    .main-sub-container-2,
+    .main-image-container {
+        width: 90%;
+    }
+
+    .footer {
+        padding: 2rem;
+    }
+}
