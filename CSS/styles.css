@@ -1,98 +1,30 @@
-/* .container {
-    width: 300px;
-    height: 300px;
-    background-color: red;
-    margin: 0 auto;
-} */
-
-/* max-width : 600px -> width <= 600px */
-/* min-width : 600px -> width >= 600px */
-
-/* @media screen and (max-width : 600px) {
-    .container {
-        background-color: yellow;
-    }
-} */
-/* 
-@media screen and (width <=600px) {
-    .container {
-        background-color: lightblue;
-    }
-} */
-/* 
-@media screen and (width >=400px) and (width <=600px) {
-    .container {
-        height: 500px;
-    }
-}
-
-
-@media screen and (min-width : 800px) {
-    .container {
-        width: 100%;
-        background-color: lightgreen;
-
-    }
-} 
-*/
-
-/* .container {
-    background-color: #203040;
-    color: #fff;
-    padding: 10px;
+body {
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-} */
-/* 
-.item {
-    padding: 10px;
-    font-size: 1.5rem;
-} */
-
-/* @media screen and (width <=610px) {
-    .item-6 {
-        display: none;
-    }
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
-@media screen and (width <=510px) {
-    .item-5 {
-        display: none;
-    }
-} */
-
-/* @media screen and (width <=610px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-} */
 
 .container {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5rem;
-    padding: 1rem;
-    align-items: center;
+    width: 400px;
+    height: 400px;
+    border: 10px solid pink;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* padding: 10px; */
 }
 
-.subcontainer {
-    display: flex;
-    gap: 20px;
+img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
 }
 
-.bi {
-    display: none;
-}
-
-@media screen and (max-width : 512px) {
-    .subcontainer {
-        display: none;
-    }
-
-    .bi {
-        display: block;
-    }
+.container:hover>img {
+    transform: scale(1.4);
 }
