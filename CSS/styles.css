@@ -1,39 +1,44 @@
-body {
-    /* margin: 0;
-    height: 100vh;
-    justify-content: center;
-    /* align-items: center; */
-    /* display: flex; */
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0px;
-}
-
-.container {
-    width: 200px;
-    height: 200px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    border: 20px solid black;
-    background-color: pink;
-    border-top: 20px solid white;
-    animation-name: moving-box;
-    border-radius: 50%;
-    animation-duration: 1s;
-    /* animation-iteration-count: infinite; */
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-
-    /* animation-direction: alternate-reverse; */
 }
 
+.grid-container>* {
+    background-color: #203040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.grid-container {
+    color: #fff;
+    height: 100vh;
+    display: grid;
+    font-size: 1.8rem;
+    text-align: center;
+    gap: 4px;
+    grid-template-columns: .5fr 4fr .5fr;
+    grid-template-rows: 100px 1fr 100px;
+}
 
-@keyframes moving-box {
-    from {
-        background-color: black;
-    }
+.header {
+    grid-column: 1/4;
+}
 
-    to {
-        background-color: red;
-    }
+.footer {
+    grid-column: 1/4;
+}
+
+.rside {
+    grid-column: 3/4;
+}
+
+.lside {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.main {
+    grid-row: 2/3;
 }
