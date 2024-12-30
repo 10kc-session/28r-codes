@@ -1,39 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.item>img {
-    width: 100%;
-    display: block;
-}
-
-.grid-container-2 {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 10px;
-}
-
-@media screen and (min-width : 600px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media screen and (max-width : 600px) {
-    .grid-container-2 {
-        grid-template-columns: 1fr;
-    }
-}
+/*
+    bootstrap is a CSS framework , which is used 
+    build rapid web pages , it is combination of
+    css , js  , jquery
+    how many ways to insert bootstrap
+        1. CDN links
+        2. download
+        3. npm 
+        4. yarn
+*/
