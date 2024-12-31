@@ -10,45 +10,33 @@
 </head>
 
 <body>
-    <button class="btn btn-primary m-3" data-bs-target="#modal-1" data-bs-toggle="modal">Login</button>
-    <div class="modal fade" id="modal-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Login <span class="bi bi-person-fill"></span></h3>
-                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <dl>
-                        <dt class="m-2">Username <span class="bi bi-person"></span></dt>
-                        <dl><input type="text" class="form-control"></dl>
-                        <dt class="m-2">Password <span class="bi bi-lock"></span></dt>
-                        <dl><input type="text" class="form-control"></dl>
-                    </dl>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success" data-bs-target="#modal-2" data-bs-toggle="modal">Login</button>
-                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+    <div class="alert alert-success w-50 mt-3 mx-auto text-center">
+        Login Success
     </div>
-
-    <div class="modal fade" id="modal-2">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="text-success modal-title fw-bold">Login Success</p>
-                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <span class="bi bi-lightbulb-fill text-warning"></span> Welcome to BootStrap 5 <span
-                        class="bi bi-lightbulb-fill text-warning"></span>
-                </div>
-            </div>
-        </div>
+    <div class="alert alert-primary w-50 mt-3 mx-auto text-center">
+        <span class="bi bi-exclamation-triangle"></span> Login Success
     </div>
-
+    <div class="alert alert-warning w-50 mt-3 mx-auto text-center">
+        Login Success
+    </div>
+    <h3 class="text-center">Dissmissable Alerts</h3>
+    <div class="alert alert-danger alert-dismissible fade show w-50 mt-3 mx-auto text-center">
+        <p class="mb-0">Login Success</p>
+        <a href="#" class="alert-link text-decoration-none">Register Here</a>
+        <button class="btn btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-info w-50 mt-3 mx-auto text-center">
+        Login Success
+    </div>
+    <div class="alert alert-dark fade show alert-dismissible w-50 mt-3 mx-auto text-center">
+        <span class="alert-heading">Login Success</span>
+        <hr>
+        <button class="btn btn-close" data-bs-dismiss="alert"></button>
+        <button class="btn btn-outline-dark">login</button>
+    </div>
+    <div class="alert alert-secondary w-50 mt-3 mx-auto text-center">
+        Login Success
+    </div>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 
