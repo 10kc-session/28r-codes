@@ -1,97 +1,86 @@
 /**
- *  Variables ? 
- *  -----------
- *      Variable is container which is used to store the data and 
- *      to perform specific operations
- *      In Javascript there are four variables
- *          1. var
- *          2. let  
- *          3. const
- *          4. global variable (automatic)
- * 
- *      var , let and const variables can be hoisted in javascript
+ * DOM manipulations
+ * -----------------
+ *   To manipulate our elements , 
+ *   every tag is an object 
  *      
- *      Syn : 
- *              varaible variableName/identifier/referenceVaraible = value;
- *              Ex : var a = 10; 
- * 
- *       declaration 
- *              varaible variableName; -> undefined
- *       assignment
- *              variableName = value;
- *       initialization
- *              -> declaration + assignment
- *              variable variableName = value;
- *      identifiers
- *      -----------
- *          identifiers cannot start with numbers 
- *          in identifiers only two special characters are allowed 
- *              i.e _ , $
- *          we have to follow name convention in any language
- *           for variables -> camel case
- *           for classes   -> pascal case
- *           for final variables -> Capital letters 
- *          identifiers cannot be keywords
+ *      document
+ *          body
+ *          documentElement
+ *          title
+ *          head
+ *          links
+ *          images
+ *          URL
+ *          forms
  */
-
-var a; // undefined -> declaration
-console.log(a); // undefined
-a = 20;   // 20   -> assingment
-console.log(a); // 20
-
-var b = 30; // initilization
-console.log(b); // 30
-
-var _c;
-console.log(_c);
-
-var $ = 10;
-console.log($);
-
-var _1234 = 1234;
-console.log(_1234);
-
-var A = 10; // not a good practice 
-console.log(A);
-
-var isMale = true;
-console.log(isMale);
-
-// var isFemale;
-// console.log(isFemale); // undefined , isFemale ,
+console.log(window);
+console.log(window.document.documentElement);
+console.log(window.document.body);
+console.log(window.document.title);
+window.document.title = "DOM"
+console.log(window.document.head);
+console.log(document.title);
+var body = document.body;
+console.log(body);
+var links = document.links;
+console.log(links);
+var images = document.images;
 
 console.clear();
+// var div = document.createElement("div");
+// div.innerText = "Created My First Element Using createElement()";
 
-var _1_2_34;
-console.log(1234);
+// document.body.appendChild(div);
 
-console.clear();
+// console.log(div.innerText);
+// console.log(div.innerHTML);
 
-var $123Abc_x;
-// console.log($123abc_x);
+// console.log(document.body.innerText);
+// console.log(document.body.innerHTML);
 
-console.log(xyz); // undefined
-var xyz;
+// var div = document.createElement("div");
+// div.className = "container";
+// console.log(div);
 
+// var img = document.createElement("img");
+// img.src = '../Images/img4.jpg';
 
-console.clear();
+// var h2 = document.createElement("h2");
+// h2.innerText = "Cat Image";
 
-console.log(xyz); // undefined
-var xyz; // ->  undefined
-var xyZ = 10; // -> 10 X undefined
-console.log(xyZ); // 10 
-xyZ = xyz; // re assingnment
-console.log(xyZ); // xyz , undefined , 10 , not defined
-console.log(xyz); // undefined , 10 , not defined
+// var p = document.createElement("p");
+// p.innerText = "Domestic cats are characterized by retractable claws, powerful bodies, acute senses, long tails, and specialized teeth adapted for hunting prey. The following article deals with general characteristics of the domestic cat. For information on larger cats, see their individual entries (such as lion, tiger, and leopard).";
 
+// div.append(img, h2, p);
+// // div.appendChild(img);
+// // div.appendChild(h2);
+// // div.appendChild(p);
 
-// var _$1_#_3 = 10;
-// console.log(_$1_#_3);
+// document.body.appendChild(div);
 
-console.clear();
+var header = document.createElement("header");
 
-var let = 10;
-console.log(let);
+var img = document.createElement("img");
+img.src = '../Images/img4.jpg';
 
-// var const = 20;
-// console.log(const);
+var item = document.createElement("div");
+item.className = "item";
+
+var a1 = document.createElement("a");
+a1.innerText = "Menu";
+a1.href = "#"
+
+var a2 = document.createElement("a");
+a2.innerText = "About";
+a2.href = "#"
+
+var a3 = document.createElement("a");
+a3.innerText = "Contact";
+a3.href = "#"
+
+item.append(a1, a2, a3);
+
+header.append(img, item);
+
+document.body.appendChild(header);
