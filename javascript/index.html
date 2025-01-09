@@ -14,26 +14,54 @@
             align-content: center;
             gap: 40px;
             transition: 0.8s ease;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: #eee;
         }
 
         #container {
             width: 300px;
             height: 300px;
-            background-color: tan;
-            transition: 0.5s ease;
+            border: 1px solid #ccc;
+            grid-column: 1/5;
         }
 
         button {
             padding: 10px;
             font-size: 1.3rem;
         }
+
+        h1 {
+            margin: 0;
+            grid-column: 1/5;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: identifier 1s ease;
+        }
+
+        @keyframes identifier {
+            from {
+                transform: translateY(-100%) rotateY(360deg);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <h1>Image Container</h1>
     <div id="container"></div>
-    <button onclick="callhim()">Change Color</button>
-    <button onclick="deletehim()">Delete Container</button>
+    <button onclick="cat()">Cat</button>
+    <button onclick="snake()">Snake</button>
+    <button onclick="dog()">Dog</button>
+    <button onclick="rabbit()">Rabbit</button>
     <script src="./index.js"></script>
 </body>
 
