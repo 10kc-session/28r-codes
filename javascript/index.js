@@ -1,133 +1,156 @@
-// // console.log(arr);
-// // console.log(arr[0]);
-// // console.log(arr[4]);
-// // console.log(arr.length);
-// // for (var i = 0; i < arr.length; i++) {
-// //     console.log(arr[i]);
-// // }
-// // console.table(arr);
 // /**
-//  *  for in loop , for of loop
-//  *  -------------------------
-//  *  syn :
-//  *          for(keys/indexes in obj/array/string){
+//  *  Anonymous functions and Arrow Functions *
+//  *  ----------------------------------------
+//  *      The Functions which are stored in variable as a value are know as first
+//  *      class functions or function expressions
 //  *
-//  *          }
-//  *  for of
-//  *  ------
-//  *      array , strings , set , maps
-//  *          for(variable value of any DataStru){
+//  *       The Functions which are not having any
+//  *       function name and stored in a variable or
+//  *       passed as argument to another function
+//  *       is known as anonymous functions
 //  *
-//  *          }
+//  *      Use :
+//  *              callbacks , promises , DOM , Events,
+//  *              Asynchronous Operations
+//  *         Syn :
+//  *                 variable referenceVariable = function(parameter1 ,.....,parameterN){
+//  *                      // statements
+//  *                      [return value]
+//  *                 }
+//  *
+//  * Arrow Function
+//  * --------------
+//  *      The Function without function keyword and function name and denoted by
+//  *      => is known as arrow function
+//  *      This is Short hand of Anonymous function.
+//  *      Introduced in ES6
+//  *      This function is stored in varaible or passed as an argument to another function
+//  *      In Arrow Function , this keyword behaviour is different compared to
+//  *      named function and anonymous function.
+//  *
+//  *      USE:
+//  *              callbacks , promises , DOM , Events,
+//  *              Asynchronous Operations
+//  *
+//  *      Syn :  varaible refVar = ([parameters]) => {
+//  *                      // statements
+//  *                     [return value]
+//  *              }
+//  *              refVar([arguments]);
+//  *
 //  */
-// var arr = [1, 2, 3, 4, 5];
-// for (var index in arr) {
-//     console.log(arr[index]);
+// var x = () => console.log("Javascript");
+// x();
+
+// var y = () => {
+//     console.log("1");
+//     console.log("2");
 // }
-// var str = "Hello World";
-// for (var index in str) {
-//     console.log(str[index]);
+// y();
+
+// var z = a => console.log(a + 10);
+// z(10);
+
+// var a = (x, y) => {
+//     console.log(x + y);
+//     console.log(x * y);
 // }
+// a(2, 3);
+
+// var b = x => x + 10;
+// console.log(b(10));
+
+
+// var c = () => "Javascript is Awesome";
+// console.log(c());
+
+
+// // write a arrow function which takes three parameters
+// // and returns sum of three numbers
 
 // console.clear();
 
-// for (var ele of arr) {
-//     console.log(ele);
+// var sum = (a, b, c) => {
+//     return a + b + c;
 // }
+// // console.log(sum(10, 20, 30));
 
-// for (var char of str) {
-//     console.log(char);
+// /**
+//  * write a arrow function which takes two parameter ,
+//  * one is array reference , second is element to insert
+//  * in array , and finally return the length of updated
+//  * array
+//  */
+
+
+// var arrray = [1, 2, 3, 4];
+// var element = 5;
+
+// var insertElement = (arr, ele) => arr.push(ele);
+// console.log(insertElement(arrray, element));
+
+// /**
+//  *  write a arrow function which takes arguments as array
+//  *  and deletes all elements from an array and return
+//  *  empty array
+//  */
+
+// var deleteAllElements = (arr) => {
+//     // var length = arr.length;
+//     // for (var i = 0; i < length; i++) {
+//     //     arr.pop();
+//     // }
+//     arr.length = 0;
+//     return arr;
 // }
+// console.log(deleteAllElements([1, 2, 3, 4]))
 
-// console.clear();
+// // var x = function () {
+// //     console.log("Print");
+// // }
+// // console.log(x);
+// // x();
 
-// arr = ["Srinivas", "Vinay", "Ravi", "Kavitha", "Midhilesh"];
-// // console.log(arr);
-// var res = arr.push("Bharath");
-// console.log(arr);
-// console.log(res);
-// //  ...
-// arr.push("Ayesha", "Naresh");
-// console.table(arr);
+// // //  write a anonymous function which takes
+// // // two argument and return there sum
 
-// arr.unshift("Arun");
-// console.table(arr);
+// // var sum = function (a, b) {
+// //     return a + b;
+// // }
+// // console.log(sum(10, 30));
 
-// console.log(arr.unshift("Pooja", "Alekya", "Shilpa"));
-// console.table(arr);
+// // var printName = function (a, b, c) {
+// //     console.log(a, b, c);
+// //     return a + b + c;
+// // }
+// // console.log(printName("x", "y", "z"));
 
-// var res = arr.pop();
-// console.table(arr);
-// console.log(res);
+/**
+ *  Callbacks in javascript
+ *  -----------------------
+ *      The function defination which is passed as 
+ *      argument to another function , methods , constructor
+ *      is known as callback functions
+ * 
+ *      Callbacks may execute at a time or 
+ *      takes some period of duration and executes later
+ * 
+ *      Use : 
+ *              Asynchronous Operations , Event Handling , 
+ *              Timers , DOM
+ *      Syn :   
+ *              function functionName(anotherFunctionDefination){
+ *                     anotherFunctionDefination([parameters]);
+ *                      [return value]
+ *              }
+ *              functionName(anotherFunctionDefination);
+ */
 
-// arr.shift();
-// console.table(arr);
-
-// for (i = 1; i <= 5; i++) {
-//     arr.shift();
-// }
-
-// console.table(arr);
-
-
-//  write a function to find even numbers in array ?
-//  isEven
-// one pare -> arr
-
-// function isEven(arr) {
-//     for (var ele of arr) {
-//         if (ele % 2 == 0) {
-//             console.log(ele);
-//         }
-//     }
-// }
-// isEven([2, 1, 5, 6, 3, 2, 7, 8, 9, 3, 3, 1, 5, 7, 7]);
-
-// function seperateEvenAndOdd(arr) {
-//     var evenArray = [];
-//     var oddArray = [];
-//     for (var ele of arr) {
-//         if (ele % 2 == 0) {
-//             evenArray.push(ele);
-//         } else {
-//             oddArray.push(ele);
-//         }
-//     }
-//     console.log(`Even Array : ${evenArray}`);
-//     console.log(`Odd Array : `, oddArray);
-// }
-// seperateEvenAndOdd([2, 1, 4, 12, 13, 76, 98, 32, 75]);
-
-//  [1,1,3,4,1,2,3,4,5,1,0];
-//  [0,1,1,12,3,3,4,5];
-
-// function isPrime(ele) {
-//     if (ele <= 1) return false;
-//     for (var i = 2; i <= Math.floor(ele / 2); i++) {
-//         if (ele % i == 0) {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-// function displayData(arr) {
-//     for (var ele of arr) {
-//         if (isPrime(ele)) {
-//             console.log(ele);
-//         }
-//     }
-// }
-// displayData([13, 15, 7, 9, 12, 5, 7, 4]);
-
-
-var arr = [2, 5, 3, 4, 1];
-for (var i = 0; i < arr.length - 1; i++) {
-    for (var j = i + 1; j < arr.length; j++) {
-        if (arr[i] > arr[j]) {
-            var temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-    }
-    console.log(arr);
+function x(callback) {
+    console.log(callback);
+    callback();
 }
+function y() {
+    console.log("Hello World");
+}
+x(y);
