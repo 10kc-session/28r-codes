@@ -1,156 +1,100 @@
-// /**
-//  *  Anonymous functions and Arrow Functions *
-//  *  ----------------------------------------
-//  *      The Functions which are stored in variable as a value are know as first
-//  *      class functions or function expressions
-//  *
-//  *       The Functions which are not having any
-//  *       function name and stored in a variable or
-//  *       passed as argument to another function
-//  *       is known as anonymous functions
-//  *
-//  *      Use :
-//  *              callbacks , promises , DOM , Events,
-//  *              Asynchronous Operations
-//  *         Syn :
-//  *                 variable referenceVariable = function(parameter1 ,.....,parameterN){
-//  *                      // statements
-//  *                      [return value]
-//  *                 }
-//  *
-//  * Arrow Function
-//  * --------------
-//  *      The Function without function keyword and function name and denoted by
-//  *      => is known as arrow function
-//  *      This is Short hand of Anonymous function.
-//  *      Introduced in ES6
-//  *      This function is stored in varaible or passed as an argument to another function
-//  *      In Arrow Function , this keyword behaviour is different compared to
-//  *      named function and anonymous function.
-//  *
-//  *      USE:
-//  *              callbacks , promises , DOM , Events,
-//  *              Asynchronous Operations
-//  *
-//  *      Syn :  varaible refVar = ([parameters]) => {
-//  *                      // statements
-//  *                     [return value]
-//  *              }
-//  *              refVar([arguments]);
-//  *
-//  */
-// var x = () => console.log("Javascript");
-// x();
+// Callbacks
+// ---------
 
-// var y = () => {
-//     console.log("1");
-//     console.log("2");
+// function x(callback) {
+//     var res = callback(10, 20);
+//     return res;
 // }
-// y();
-
-// var z = a => console.log(a + 10);
-// z(10);
-
-// var a = (x, y) => {
-//     console.log(x + y);
-//     console.log(x * y);
+// function y(a, b) {
+//     return a + b;
 // }
-// a(2, 3);
+// console.log(x(y));
 
-// var b = x => x + 10;
-// console.log(b(10));
-
-
-// var c = () => "Javascript is Awesome";
-// console.log(c());
-
-
-// // write a arrow function which takes three parameters
-// // and returns sum of three numbers
-
-// console.clear();
-
-// var sum = (a, b, c) => {
-//     return a + b + c;
+// function call(callback) {
+//     callback();
 // }
-// // console.log(sum(10, 20, 30));
+// call(function () {
+//     console.log("Javascript");
+// });
+// call(function () { console.log("Javascript is Awesome"); });
 
-// /**
-//  * write a arrow function which takes two parameter ,
-//  * one is array reference , second is element to insert
-//  * in array , and finally return the length of updated
-//  * array
-//  */
-
-
-// var arrray = [1, 2, 3, 4];
-// var element = 5;
-
-// var insertElement = (arr, ele) => arr.push(ele);
-// console.log(insertElement(arrray, element));
-
-// /**
-//  *  write a arrow function which takes arguments as array
-//  *  and deletes all elements from an array and return
-//  *  empty array
-//  */
-
-// var deleteAllElements = (arr) => {
-//     // var length = arr.length;
-//     // for (var i = 0; i < length; i++) {
-//     //     arr.pop();
-//     // }
-//     arr.length = 0;
-//     return arr;
+// function print(callback) {
+//     console.log(callback);
+//     callback();
 // }
-// console.log(deleteAllElements([1, 2, 3, 4]))
+// print(() => console.log("Javascript"));
 
-// // var x = function () {
-// //     console.log("Print");
-// // }
-// // console.log(x);
-// // x();
+// higher order function
+// function demo(callback) {
+//     console.log(callback(20));
+// }
+// demo(a => a + 10);
 
-// // //  write a anonymous function which takes
-// // // two argument and return there sum
 
-// // var sum = function (a, b) {
-// //     return a + b;
-// // }
-// // console.log(sum(10, 30));
+// function demo(callback1, callback2) {
+//     console.log("Callback 1 is Invoked");
+//     console.log(callback1());
+//     console.log("Callback 2 is Invoked");
+//     console.log(callback2());
+// }
+// demo(() => { return "Callback 1 Executed" },
+//     () => { return "Callback 2 Executed" });
 
-// // var printName = function (a, b, c) {
-// //     console.log(a, b, c);
-// //     return a + b + c;
-// // }
-// // console.log(printName("x", "y", "z"));
+
+// var demo = (a, b) => {
+//     console.log("Invoked");
+//     a(10, 40);
+//     console.log("Again Invoked");
+//     b(30, 50);
+//     a(60, 50);
+//     b(40, 10);
+// }
+// demo((a, b) => console.log(a + b), (a, b) => console.log(a - b));
+
 
 /**
- *  Callbacks in javascript
- *  -----------------------
- *      The function defination which is passed as 
- *      argument to another function , methods , constructor
- *      is known as callback functions
- * 
- *      Callbacks may execute at a time or 
- *      takes some period of duration and executes later
- * 
- *      Use : 
- *              Asynchronous Operations , Event Handling , 
- *              Timers , DOM
- *      Syn :   
- *              function functionName(anotherFunctionDefination){
- *                     anotherFunctionDefination([parameters]);
- *                      [return value]
- *              }
- *              functionName(anotherFunctionDefination);
+ * invoked
+ * 50
+ * aga
+ * -20
+ * 110
+ * 30
+ */
+// function one() {
+//     console.log("Callback 1 Executed");
+// }
+// function two() {
+//     console.log("Callback 2 Executed");
+// }
+// demo(one, two);
+
+
+// var vs let vs const  (Scopes)
+
+/**
+ * 1. global scope  
+ *      When a variable or function is declared outside the block or outside the 
+ *      function is know global scope
+ * 2. block scope
+ *      The Variable which is declared inside a block {} and cannot be 
+ *      accessed from outside of the block is know as block scope 
+ *      note : var is global scope varaible , block scope doesnt works
+ * 3. local / function scope
+ *      The Variable which is declared inside the function and can be accessed
+ *      within the function only 
+ * 4. lexical scope
  */
 
-function x(callback) {
-    console.log(callback);
-    callback();
-}
-function y() {
-    console.log("Hello World");
-}
-x(y);
+// var -> block
+// let and const -> block
+// var , let ,const -> function
+
+var a;
+var a = 30;
+console.log(a);
+let b;
+b = 20;
+console.log(b);
+const c = 70; // undefined
+// const c = 50;
+console.log(c);
