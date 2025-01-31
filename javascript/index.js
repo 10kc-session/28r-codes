@@ -1,100 +1,96 @@
-// Callbacks
-// ---------
-
-// function x(callback) {
-//     var res = callback(10, 20);
-//     return res;
-// }
-// function y(a, b) {
-//     return a + b;
-// }
-// console.log(x(y));
-
-// function call(callback) {
-//     callback();
-// }
-// call(function () {
-//     console.log("Javascript");
+/**
+ *  Array Iterative Methods
+ *  -----------------------
+ *      forEach , map , filter , reduce , reduceRight , find , some , every 
+ */
+// let arr = [1, 2, 3, 4, 5, 6];
+// let evenArr = [];
+// arr.forEach((ele) => {
+//     if (ele % 2 == 0) {
+//         evenArr.push(ele);
+//     }
 // });
-// call(function () { console.log("Javascript is Awesome"); });
+// console.log(evenArr);
 
-// function print(callback) {
-//     console.log(callback);
-//     callback();
-// }
-// print(() => console.log("Javascript"));
+// arr = [2, 3, 4, 5, 6, 7, 8];
+// //  arr = [4 , 9 , 16 , 25 , 36 , 49 , 64];
 
-// higher order function
-// function demo(callback) {
-//     console.log(callback(20));
-// }
-// demo(a => a + 10);
+// arr.forEach((ele, index, arr) => {
+//     arr[index] = ele * ele;
+// });
+// console.log(arr);
 
-
-// function demo(callback1, callback2) {
-//     console.log("Callback 1 is Invoked");
-//     console.log(callback1());
-//     console.log("Callback 2 is Invoked");
-//     console.log(callback2());
-// }
-// demo(() => { return "Callback 1 Executed" },
-//     () => { return "Callback 2 Executed" });
+// arr = [2, 3, 4, 5, 6, 7];
+// let temp = [];
+// arr.forEach((ele) => {
+//     temp.push(ele * ele);
+// })
+// console.log(temp);
 
 
-// var demo = (a, b) => {
-//     console.log("Invoked");
-//     a(10, 40);
-//     console.log("Again Invoked");
-//     b(30, 50);
-//     a(60, 50);
-//     b(40, 10);
-// }
-// demo((a, b) => console.log(a + b), (a, b) => console.log(a - b));
+arr = [1, 2, 3, 4, 5, 6, 7, 8];
+let res = arr.map((ele) => ele * 3);
+// console.log(res);
+
+console.log(arr.map(ele => "Javascript"));
+
+// [false , false , true , true , .....]
+
+//
+
+// let res = arr.filter((ele, index, arr) => {
+//     console.log(ele, index, arr);
+//     return ele % 2 != 0;
+// });
+// console.log(res);
 
 
 /**
- * invoked
- * 50
- * aga
- * -20
- * 110
- * 30
+ *   filter elements from array where elements lenght should be > 5
+ *      ["javascript" , "java" , "jvm" , "node js" , "filter method"]
+ *      ["javascript" , "node js" , "filter method"]
  */
-// function one() {
-//     console.log("Callback 1 Executed");
-// }
-// function two() {
-//     console.log("Callback 2 Executed");
-// }
-// demo(one, two);
+// arr = ["javascript", "java", "jvm", "node js", "filter method"];
 
+// console.log(arr.filter(ele => ele.length > 5));
 
-// var vs let vs const  (Scopes)
+arr = [10, 20, 40, 50, 32, 31, 90, 4];
+// find elements from an array which can divisible by 3 and store in array
+
+arr.filter(ele => ele % 3 == 0).forEach(ele => console.log(ele));
 
 /**
- * 1. global scope  
- *      When a variable or function is declared outside the block or outside the 
- *      function is know global scope
- * 2. block scope
- *      The Variable which is declared inside a block {} and cannot be 
- *      accessed from outside of the block is know as block scope 
- *      note : var is global scope varaible , block scope doesnt works
- * 3. local / function scope
- *      The Variable which is declared inside the function and can be accessed
- *      within the function only 
- * 4. lexical scope
+ *      take a array of elements , multiple by 2 and add 1 , later find the number
+ *      is even and print the value by method chaining
  */
+// [22 , 42 , 102 , 66 , 64 , 182 , 10]  [22 , 42 , 102 , 66 , 64 , 182 , 10]
+// arr.map(ele => (ele * 2) + 2).filter(ele => ele % 2 == 0).forEach(ele => console.log(ele));
 
-// var -> block
-// let and const -> block
-// var , let ,const -> function
 
-var a;
-var a = 30;
-console.log(a);
-let b;
-b = 20;
-console.log(b);
-const c = 70; // undefined
-// const c = 50;
-console.log(c);
+//  sum of elements
+console.clear();
+
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+// }
+// console.log(sum);
+// 
+
+arr = [30, 50, 10, 30];
+
+res = arr.reduce((initialValue, currentValue) => initialValue + currentValue, 30);
+
+arr = ["javascript", "is", "awesome"];
+
+res = '';
+for (let str of arr) {
+    res = res + " " + str;
+}
+
+res = arr.reduceRight((a, b) => a + " " + b);
+
+console.log(res);
+
+
+
