@@ -1,96 +1,56 @@
 /**
- *  Array Iterative Methods
- *  -----------------------
- *      forEach , map , filter , reduce , reduceRight , find , some , every 
+ * Callback Hells
+ * Promises
+ * Async and Await
  */
-// let arr = [1, 2, 3, 4, 5, 6];
-// let evenArr = [];
-// arr.forEach((ele) => {
-//     if (ele % 2 == 0) {
-//         evenArr.push(ele);
-//     }
-// });
-// console.log(evenArr);
 
-// arr = [2, 3, 4, 5, 6, 7, 8];
-// //  arr = [4 , 9 , 16 , 25 , 36 , 49 , 64];
+let add = (val, callback) => callback(val + 10, true);
+let sub = (val, callback) => callback(val - 5, false);
+let div = (val, callback) => callback(val / 2, false);
+let mul = (val, callback) => callback(val * 3, true);
 
-// arr.forEach((ele, index, arr) => {
-//     arr[index] = ele * ele;
-// });
-// console.log(arr);
+add(10, function (addRes, status) {
+    if (status) {
+        sub(addRes, function (subRes, status) {
+            if (status) {
+                div(subRes, function (divRes, status) {
+                    if (status) {
+                        mul(divRes, function (finalRes, status) {
+                            if (status) {
+                                console.log(finalRes)
+                            } else {
+                                console.log("Multiplication Failed");
+                            }
+                        })
+                    } else {
+                        console.log("Division Failed");
+                    }
+                })
+            } else {
+                console.log("Subtraction Failed");
+            }
+        })
+    } else {
+        console.log("Addition Failed")
+    }
+});
 
-// arr = [2, 3, 4, 5, 6, 7];
-// let temp = [];
-// arr.forEach((ele) => {
-//     temp.push(ele * ele);
-// })
-// console.log(temp);
 
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8];
-let res = arr.map((ele) => ele * 3);
-// console.log(res);
+let promise = new Promise((resolve, reject) => {
+    resolve("Success State");
+});
 
-console.log(arr.map(ele => "Javascript"));
+// console.log(promise);
 
-// [false , false , true , true , .....]
-
-//
-
-// let res = arr.filter((ele, index, arr) => {
-//     console.log(ele, index, arr);
-//     return ele % 2 != 0;
-// });
-// console.log(res);
-
+promise
+    .then((result) => {
+        console.log(result);
+        return "Javascript is Awesome";
+    })
+    .then(res => console.log(res));
 
 /**
- *   filter elements from array where elements lenght should be > 5
- *      ["javascript" , "java" , "jvm" , "node js" , "filter method"]
- *      ["javascript" , "node js" , "filter method"]
+ *      new Promise(callback); -> this will invoke promise constructor and creates a new 
+ *      promise with resolve state or rejected state which is given in callback 
  */
-// arr = ["javascript", "java", "jvm", "node js", "filter method"];
-
-// console.log(arr.filter(ele => ele.length > 5));
-
-arr = [10, 20, 40, 50, 32, 31, 90, 4];
-// find elements from an array which can divisible by 3 and store in array
-
-arr.filter(ele => ele % 3 == 0).forEach(ele => console.log(ele));
-
-/**
- *      take a array of elements , multiple by 2 and add 1 , later find the number
- *      is even and print the value by method chaining
- */
-// [22 , 42 , 102 , 66 , 64 , 182 , 10]  [22 , 42 , 102 , 66 , 64 , 182 , 10]
-// arr.map(ele => (ele * 2) + 2).filter(ele => ele % 2 == 0).forEach(ele => console.log(ele));
-
-
-//  sum of elements
-console.clear();
-
-// let sum = 0;
-// for (let i = 0; i < arr.length; i++) {
-//     sum = sum + arr[i];
-// }
-// console.log(sum);
-// 
-
-arr = [30, 50, 10, 30];
-
-res = arr.reduce((initialValue, currentValue) => initialValue + currentValue, 30);
-
-arr = ["javascript", "is", "awesome"];
-
-res = '';
-for (let str of arr) {
-    res = res + " " + str;
-}
-
-res = arr.reduceRight((a, b) => a + " " + b);
-
-console.log(res);
-
-
-
