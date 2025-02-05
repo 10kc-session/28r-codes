@@ -9,10 +9,10 @@
 // let div = (val, callback) => callback(val / 2, false);
 // let mul = (val, callback) => callback(val * 3, true);
 
-let add = val => Promise.resolve(val + 10);
-let sub = val => Promise.resolve(val - 5);
-let div = val => Promise.resolve(val / 2);
-let mul = val => Promise.resolve(val * 3);
+// let add = val => Promise.resolve(val + 10);
+// let sub = val => Promise.resolve(val - 5);
+// let div = val => Promise.resolve(val / 2);
+// let mul = val => Promise.resolve(val * 3);
 
 
 // add(20)
@@ -93,3 +93,88 @@ let mul = val => Promise.resolve(val * 3);
 //         })
 //     })
 // });
+
+
+/**
+ * Async and Await
+ * ---------------
+ *  Async keyword use to convert function into asynchornous function and 
+ *  these function returns promises internally
+ *  
+ */
+
+// async function conf() {
+//     let res = await Promise.resolve("One");
+//     console.log(res);
+//     let xyz = await 10;
+//     console.log(xyz);
+//     console.log("Three");
+// }
+// conf();
+// console.log("Two");
+
+// https://fakestoreapi.com/products
+
+
+/**
+ * fetch method is used to get the data from given link and it return a promise object
+ * we can perform all http request using fetch i.e get , post , put , patch , delete
+ * URL , options
+ *      -> 
+ */
+
+// fetch("https://fakestoreapi.com/products")
+//     .then(response => console.log(response))
+
+// async function getData() {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     let result = await response.json();
+//     result.forEach(obj => console.log(obj.title))
+// }
+// getData();
+
+// function validateOrderId(orderId) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(resolve, 1000, "Order Validated")
+//     });
+// }
+
+// function processPayment(orderId) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(reject, 2000, "Payment Failed")
+//     });
+// }
+
+// function sendEmail(orderId) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(resolve, 1000, "Email Sent")
+//     });
+// }
+// async function placeOrder(orderId) {
+//     try {
+//         let validateOrderResult = await validateOrderId(orderId);
+//         console.log(validateOrderResult);
+
+//         let processPaymentResult = await processPayment(orderId);
+//         console.log(processPaymentResult);
+
+//         let sendEmailResult = await sendEmail(orderId);
+//         console.log(sendEmailResult);
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
+// placeOrder(12345);
+// console.log(2000);
+
+// function placeOrder(orderId) {
+//     validateOrderId(orderId).then(res => {
+//         console.log(res);
+//         return processPayment(orderId);
+//     }).then(res => {
+//         console.log(res);
+//         return sendEmail(orderId)
+//     }).then(res => console.log(res));
+
+// }
+// placeOrder(12345);
