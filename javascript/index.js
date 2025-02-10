@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/students";
+const URL = "https://invited-nervous-weaver.glitch.me/students";
 async function saveData() {
     let input = document.getElementById("name");
     let options = {
@@ -40,7 +40,7 @@ async function deleteData(id) {
     let options = {
         "method": "DELETE"
     }
-    let response = await fetch(`http://localhost:3000/students/${id}`, options);
+    let response = await fetch(`https://invited-nervous-weaver.glitch.me/students/${id}`, options);
     if (response.ok) {
         console.log("Deleted");
         getData();
