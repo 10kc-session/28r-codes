@@ -4,82 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Grid</title>
+    <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
-        .container {
+        #container {
+            padding: 10px;
+            margin: 6px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1400px;
-            margin: 0 auto;
+            gap: 10px;
         }
 
-        .item {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            overflow: hidden;
+        #container>div {
             padding: 10px;
-        }
-
-        .item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .image-container {
-            height: 250px;
-            overflow: hidden;
-            background: #f8f8f8;
-        }
-
-        .image-container>img {
-            mix-blend-mode: multiply;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-        }
-
-        .item:hover .image-container>img {
-            transform: scale(1.08);
-        }
-
-        .text-container {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 15px;
-                padding: 10px;
-            }
+            border: 1px solid #ccc;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
         }
     </style>
 </head>
 
 <body>
-    <div class="container" id="container"></div>
-    <script src="./index.js"></script>
+    <input type="text" id="name" placeholder="username">
+    <button onclick="saveData()">Submit</button>
+    <button onclick="deleteAllData()">Delete All</button>
+    <div id="container"></div>
+    <script src='./index.js'></script>
 </body>
 
 </html>

@@ -1,20 +1,57 @@
-async function getData() {
-    let response = await fetch("https://fakestoreapi.com/products");
-    let data = await response.json();
-    displayData(data);
+const URL = "http://localhost:3000/students";
+async function saveData() {
+    let input = document.getElementById("name");
+    let options = {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify({
+            "name": input.value
+        })
+    }
+    let response = await fetch(URL, options);
+    if (response.ok) {
+        input.value = '';
+        getData();
+    }
 }
-function displayData(data) {
+
+async function getData() {
+    let response = await fetch(URL);
+    let students = await response.json();
+    displayData(students);
+}
+
+function displayData(students) {
     let container = document.getElementById("container");
-    data.forEach(obj => {
+    container.innerHTML = ``;
+    students.forEach(student => {
         let item = document.createElement("div");
-        item.className = "item";
         item.innerHTML = `
-            <div class="image-container"> <img src = '${obj["image"]}'> </div>
-            <p>${obj["title"]}</p>
-            <p>${obj["category"]}</p>
-            <div class='text-container'>${obj["description"]}</div>
-        `
+            <p><b>ID : </b>${student.id} </p>
+            <p><b>NAME : </b>${student.name}</p>
+            <button onclick='deleteData("${student.id}")'>Delete</button>
+        `;
         container.appendChild(item);
     });
 }
-getData();
+async function deleteData(id) {
+    let options = {
+        "method": "DELETE"
+    }
+    let response = await fetch(`http://localhost:3000/students/${id}`, options);
+    if (response.ok) {
+        console.log("Deleted");
+        getData();
+    }
+}
+
+async function deleteAllData() {
+    let response = await fetch(URL, { method: "GET" });
+    let students = await response.json();
+    students.forEach(student => deleteData(student.id));
+}
+
+
+getData()
