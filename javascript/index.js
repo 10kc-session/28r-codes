@@ -1,17 +1,23 @@
-const URL = "https://invited-nervous-weaver.glitch.me/students";
+const URL = "http://localhost:8000/students";
 let input = document.getElementById("name");
 let studentId = document.getElementById("studentid");
 async function editData(id) {
-    let response = await fetch(`https://invited-nervous-weaver.glitch.me/students/${id}`);
-    let student = await response.json();
-    console.log(student);
-    input.value = student.name;
-    studentId.value = student.id;
+    try {
+        let response = await fetch(`http://localhost:8000/students/${id}`);
+        if (!response.ok)
+            throw new Error("HTTP REQUEST ERROR : " + response.statusText);
+        let student = await response.json();
+        console.log(student);
+        input.value = student.name;
+        studentId.value = student.id;
+    } catch (err) {
+        console.error(err);
+    }
 }
 async function saveData() {
     let stId = studentId.value;
     let methodRequest = stId ? "PUT" : "POST";
-    let url = stId ? `https://invited-nervous-weaver.glitch.me/students/${stId}` : URL;
+    let url = stId ? `http://localhost:8000/students/${stId}` : URL;
     let options = {
         "method": methodRequest,
         "headers": {
@@ -53,7 +59,7 @@ async function deleteData(id) {
     let options = {
         "method": "DELETE"
     }
-    let response = await fetch(`https://invited-nervous-weaver.glitch.me/students/${id}`, options);
+    let response = await fetch(`http://localhost:8000/students/${id}`, options);
     if (response.ok) {
         console.log("Deleted");
         getData();
