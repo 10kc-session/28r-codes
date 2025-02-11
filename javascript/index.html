@@ -4,29 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Management</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            outline: none;
+            background: #1f2b3a;
+            color: white;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff7e5f;
+            box-shadow: 0 0 8px rgba(255, 126, 95, 0.5);
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #dd2476, #ff512f);
+            transform: scale(1.05);
+        }
+
         #container {
             padding: 10px;
-            margin: 6px;
+            margin: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 10px;
+            gap: 15px;
+            width: 80%;
         }
 
         #container>div {
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            background: #1f2b3a;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
             display: flex;
-            gap: 10px;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            text-align: center;
+        }
+
+        #container>div:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 
 <body>
-    <input type="text" id="name" placeholder="username">
+    <input type="text" id="name" placeholder="Enter student name">
     <input type="hidden" id="studentid">
     <button onclick="saveData()">Submit</button>
     <button onclick="deleteAllData()">Delete All</button>
