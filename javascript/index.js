@@ -1,8 +1,19 @@
 const URL = "https://invited-nervous-weaver.glitch.me/students";
+let input = document.getElementById("name");
+let studentId = document.getElementById("studentid");
+async function editData(id) {
+    let response = await fetch(`https://invited-nervous-weaver.glitch.me/students/${id}`);
+    let student = await response.json();
+    console.log(student);
+    input.value = student.name;
+    studentId.value = student.id;
+}
 async function saveData() {
-    let input = document.getElementById("name");
+    let stId = studentId.value;
+    let methodRequest = stId ? "PUT" : "POST";
+    let url = stId ? `https://invited-nervous-weaver.glitch.me/students/${stId}` : URL;
     let options = {
-        "method": "POST",
+        "method": methodRequest,
         "headers": {
             "Content-Type": "application/json"
         },
@@ -10,7 +21,7 @@ async function saveData() {
             "name": input.value
         })
     }
-    let response = await fetch(URL, options);
+    let response = await fetch(url, options);
     if (response.ok) {
         input.value = '';
         getData();
@@ -31,11 +42,13 @@ function displayData(students) {
         item.innerHTML = `
             <p><b>ID : </b>${student.id} </p>
             <p><b>NAME : </b>${student.name}</p>
+            <button onclick='editData("${student.id}")'>Edit</button>
             <button onclick='deleteData("${student.id}")'>Delete</button>
         `;
         container.appendChild(item);
     });
 }
+
 async function deleteData(id) {
     let options = {
         "method": "DELETE"
@@ -54,4 +67,4 @@ async function deleteAllData() {
 }
 
 
-getData()
+getData();
