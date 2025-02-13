@@ -1,76 +1,71 @@
-const URL = "http://localhost:8000/students";
-let input = document.getElementById("name");
-let studentId = document.getElementById("studentid");
-async function editData(id) {
+let container = document.getElementById("container");
+let btnContainer = document.getElementById("btn-container");
+
+async function getData() {
     try {
-        let response = await fetch(`http://localhost:8000/students/${id}`);
-        if (!response.ok)
-            throw new Error("HTTP REQUEST ERROR : " + response.statusText);
-        let student = await response.json();
-        console.log(student);
-        input.value = student.name;
-        studentId.value = student.id;
+        let response = await fetch("https://fakestoreapi.com/products");
+        if (!response.ok) {
+            throw new Error(`HTTP Request : ${response.statusText}`);
+        }
+        let result = await response.json();
+        localStorage.setItem("products", JSON.stringify(result));
+        createButton();
+        displayData();
     } catch (err) {
         console.error(err);
     }
 }
-async function saveData() {
-    let stId = studentId.value;
-    let methodRequest = stId ? "PUT" : "POST";
-    let url = stId ? `http://localhost:8000/students/${stId}` : URL;
-    let options = {
-        "method": methodRequest,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "body": JSON.stringify({
-            "name": input.value
+function createButton() {
+    btnContainer.innerHTML = ``;
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    if (products.length !== 0) {
+        let result = Array.from(new Set(products.map(obj => obj.category)));
+        result.forEach(ele => {
+            let button = document.createElement("button");
+            button.className = "btn btn-outline-secondary px-3 py-2 fs-3";
+            button.textContent = ele;
+            button.addEventListener("click", () => {
+                filterData(ele);
+            })
+            btnContainer.appendChild(button);
         })
     }
-    let response = await fetch(url, options);
-    if (response.ok) {
-        input.value = '';
-        getData();
+}
+function filterData(category) {
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    if (products.length !== 0) {
+        let result = products.filter(obj => obj.category === category);
+        displayData(result);
     }
 }
 
-async function getData() {
-    let response = await fetch(URL);
-    let students = await response.json();
-    displayData(students);
-}
-
-function displayData(students) {
-    let container = document.getElementById("container");
+function displayData(filterProducts) {
     container.innerHTML = ``;
-    students.forEach(student => {
-        let item = document.createElement("div");
-        item.innerHTML = `
-            <p><b>ID : </b>${student.id} </p>
-            <p><b>NAME : </b>${student.name}</p>
-            <button onclick='editData("${student.id}")'>Edit</button>
-            <button onclick='deleteData("${student.id}")'>Delete</button>
-        `;
-        container.appendChild(item);
-    });
-}
-
-async function deleteData(id) {
-    let options = {
-        "method": "DELETE"
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    if (filterProducts !== undefined) {
+        products = filterProducts;
     }
-    let response = await fetch(`http://localhost:8000/students/${id}`, options);
-    if (response.ok) {
-        console.log("Deleted");
-        getData();
+    if (products.length === 0) {
+        container.innerHTML = "No data Available";
+    } else {
+        products.forEach(obj => {
+            let item = document.createElement("div");
+            item.className = "border border-3 border-warning m-2 p-2 d-flex gap-2 align-items-center    ";
+            item.innerHTML = `
+                <div>
+                    <img class='w-100 object-fit-contain' style='height : 250px' src=${obj.image}>
+                </div>
+                <div>
+                    <h3 class="text-center">Title : ${obj.title}</h3>
+                <p class="mb-0">Description : ${obj.description}</p>
+                <p class="fw-bold">Category : ${obj.category}</p>
+                </div>
+            `;
+            container.appendChild(item);
+        })
     }
 }
 
-async function deleteAllData() {
-    let response = await fetch(URL, { method: "GET" });
-    let students = await response.json();
-    students.forEach(student => deleteData(student.id));
-}
 
 
-getData();
+window.onload = getData;
